@@ -15,10 +15,12 @@ df.drop(columns = ["UDI"], inplace=True)
 
 label_encoder = LabelEncoder()
 df['Type'] = label_encoder.fit_transform(df['Type'])
+df.columns = df.columns.str.strip()   # removes spaces
 
-target = 'Failure'
+target = "Failure"
 
-X = df.drop(columns=[target],inplace=True)
+
+X = df.drop(columns=[target])   # no inplace
 y = df[target]
 
 X_train, X_test, y_train, y_test = train_test_split(

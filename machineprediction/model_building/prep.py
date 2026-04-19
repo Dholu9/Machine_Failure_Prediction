@@ -3,6 +3,7 @@ import sklearn
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
 from huggingface_hub import login, HfApi
+import os
 
 api = HfApi(token=os.getenv("HF_TOKEN"))
 

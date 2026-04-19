@@ -8,6 +8,7 @@ import os
 import joblib
 from huggingface_hub import login, HfApi, create_repo
 import xgboost as xgb
+from huggingface_hub.utils import RepositoryNotFoundError, HfHubHTTPError
 
 
 api = HfApi()
